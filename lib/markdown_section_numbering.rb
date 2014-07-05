@@ -35,12 +35,12 @@ class MarkdownSectionNumbering
       return line if target_level > max_level
       
       header_sign = "#" * target_level
-      regex = Regexp.new("^#{header_sign}\s*(.+)")
+      regex = Regexp.new("^#{header_sign}\\s*(\\d+(\\.\\d+)*)?\\s*(.+)")
       match = line.match(regex)
 
       number = calc_section_number(target_level)
       
-      "#{header_sign} #{number} #{match[1]}"
+      "#{header_sign} #{number} #{match[3]}"
     end
 
     def calc_section_number(target_level)

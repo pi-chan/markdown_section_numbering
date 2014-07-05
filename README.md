@@ -18,6 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
+### Basic
+
 ```ruby
 require "markdown_section_numbering"
 
@@ -51,6 +53,31 @@ foo bar
 - list
 - list
 ```
+
+### Re-numbering
+
+Section numbers are replaced with new number.
+
+Following markdown is going to be converted,
+
+```
+# foo
+# 1 a
+## 1.1 b
+## bar
+## 1.2 c
+```
+
+like this.
+
+```
+# 1 foo
+# 2 a
+## 2.1 b
+## 2.2 bar
+## 2.3 c
+```
+
 
 ## Contributing
 
